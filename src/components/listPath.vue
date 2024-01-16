@@ -3,7 +3,6 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const isRouteActive = (path: string) => {
-  // Menggunakan properti `to` dari komponen <RouterLink>
   return route.path === path;
 };
 </script>

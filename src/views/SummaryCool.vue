@@ -1,11 +1,9 @@
-<script lang="ts">
+<script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import {  useSaveStore  } from '@/stores/save'
 import { computed } from 'vue';
 
-export default {
-    setup() {
-        const plan = useSaveStore().plan;
+const plan = useSaveStore().plan;
         const addons = useSaveStore().addons;
 
         const total = computed(() => {
@@ -14,10 +12,6 @@ export default {
             }, 0) + plan.attr.price;
         });
 
-
-        return { plan, addons, total }
-    }
-}
 </script>
 
 <template>
@@ -36,7 +30,7 @@ export default {
         </div>
         <div class="lines animate__animated animate__fadeIn" style="animation-delay: .9s;" v-if="addons.online.value || addons.storage.value || addons.profile.value"></div>
         <template v-for="addon in addons">
-            <div v-if="addon.value" class="charge-down animate__animated animate__fadeIn" style="animation-delay: 1.2s;">
+            <div v-if="addon.value" class="charge-down animate__animated animate__fadeIn" style="animation-delay: 1.2s;" v-bind:key="addon.key">
                 <p class="fs-1-3 color-cool-gray bold-500">{{ addon.message }}</p>
                 <p class="fs-1-3 bold-500 color-marine-blue" style="opacity: .8;">+${{ plan.month ? addon.price+'/mo' : addon.price * 10+'/yr' }}</p>
             </div>

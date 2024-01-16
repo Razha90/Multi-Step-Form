@@ -1,10 +1,8 @@
-<script lang="ts">
+<script setup lang="ts">
 import { useSaveStore } from '@/stores/save'
 import { RouterLink } from 'vue-router'
 
-  export default {
-    setup() {
-      const save = useSaveStore().person;
+const save = useSaveStore().person;
       const nameClick = () => {
         save.name.error = false;
       }
@@ -15,9 +13,6 @@ import { RouterLink } from 'vue-router'
         save.phone.error = false;
       }
 
-      return { save,nameClick,emailClick,phoneClick };
-    }
-  };
 </script>
 
 <template>

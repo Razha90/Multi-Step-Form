@@ -1,18 +1,14 @@
-<script lang="ts">    
+<script setup lang="ts">    
     import { RouterLink } from 'vue-router';
     import { useSaveStore } from '@/stores/save';
 
-    export default {
-        setup() {
-            const save = useSaveStore().plan;
+    const save = useSaveStore().plan;
             function saving(num: number, val: string, pri: number): void {
                 save.attr.value = num;
                 save.attr.message = val;
                 save.attr.price = pri;
             }
-            return { save, saving }
-        }
-    }
+
 </script>
 
 <template>
@@ -88,6 +84,10 @@
     border-radius: 10px;
     transition: .5s;
     cursor: pointer;
+}
+
+.box-order:hover {
+    transform: scale(1.1) !important;
 }
 
 .box-order-active {

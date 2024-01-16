@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 import YourInfo from '../views/YourInfo.vue'
 import SelectPlan from '../views/SelectPlan.vue'
 import AddOns from '../views/AddOns.vue'
-import Summary from '../views/Summary.vue'
+import SummaryCool from '../views/SummaryCool.vue'
 import Finish from '../views/Finish.vue'
 import { useSaveStore } from '@/stores/save'
 
@@ -76,12 +75,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'yourinfo',
-      component: () => YourInfo,
+      component: YourInfo,
     },
     {
       path: '/selectplan',
       name: 'selectplan',
-      component: () => SelectPlan,
+      component: SelectPlan,
       beforeEnter: (to, from, next) => {
         if (!pageOneZero()) {
           if (checkHome(false)) {
@@ -98,7 +97,7 @@ const router = createRouter({
     {
       path: '/addons',
       name: 'addons',
-      component: () => AddOns,
+      component: AddOns,
       beforeEnter: (to, from, next) => {
         if (!pageOneZero()) {
           if (checkHome(false)) {
@@ -115,7 +114,7 @@ const router = createRouter({
     {
       path: '/summary',
       name: 'summary',
-      component: () => Summary,
+      component: SummaryCool,
       beforeEnter: (to, from, next) => {
         if (!pageOneZero()) {
           if (checkHome(false)) {
@@ -132,7 +131,7 @@ const router = createRouter({
     {
       path: '/finish',
       name: 'finish',
-      component: () => Finish,
+      component: Finish,
       beforeEnter: (to, from, next) => {
         if (!pageOneZero()) {
           if (checkHome(false)) {

@@ -1,14 +1,10 @@
-<script lang="ts">
+<script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { useSaveStore } from '@/stores/save';
 
-export default {
-    setup() {
-        const addons = useSaveStore().addons;
+const addons = useSaveStore().addons;
         const plan = useSaveStore().plan;
-        return { addons, plan }
-    }
-}
+
 
 </script>
 
@@ -88,11 +84,11 @@ export default {
     border-radius: 12px;
     user-select: none;
     cursor: pointer;
-    transition: transform .4s;
+    transition: transform .5s;
 }
 
 .addons-wrapper:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 
 .addons-wrapper-active {

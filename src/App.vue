@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import ListPath from './components/listPath.vue';
-console.log('App 1');
 
 </script>
 
@@ -14,6 +13,4 @@ console.log('App 1');
       <RouterView />
     </div>
   </div>
-
-  
 </template>
