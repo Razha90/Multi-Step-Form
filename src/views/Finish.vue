@@ -1,7 +1,7 @@
 <template>
     <div class="finish">
         <div>
-            <img src="/icon-thank-you.svg" alt="Thanks You">
+            <img src="/icon-thank-you.svg" alt="Thanks You" class="animate__animated animate__jackInTheBox">
         </div>
 
         <div>
@@ -15,6 +15,8 @@
 </template>
 
 <style scoped>
+
+
 img {
     width: 7rem;
 }
